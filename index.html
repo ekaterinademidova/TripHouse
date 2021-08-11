@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripHouse</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/top-section.css">
+    <link rel="stylesheet" href="./css/advantages.css">
 </head>
 <body>
     <div class="top-section">
@@ -22,20 +26,20 @@
                         <ul class="header__list">
                             <!-- Спросить, должна ли оставаться желтая черта, если страница открыта. -->
                             <li class="header__item">
-                                <a href="#!" class="header__link">Stays</a>
+                                <a href="#!" class="header__link-text">Stays</a>
                             </li>
                             <li class="header__item">
-                                <a href="#!" class="header__link">Attractions</a>
+                                <a href="#!" class="header__link-text">Attractions</a>
                             </li>
                             <!-- Изменить появление черты на изменение цвета рисунка. -->
                             <li class="header__item">
-                                <a href="#!" class="header__link">
+                                <a href="#!" class="header__link-img">
                                     <img src="./img/svg/header-night.svg" alt="Night" class="header__link-pic">
                                 </a>
                             </li>
                             <li class="header__item">
-                                <a href="#!" class="header__link">
-                                    <img src="./img/svg/header-account-circle.svg" alt="Account circle" class="header__link-pic">
+                                <a href="#!" class="header__link-img">
+                                    <img src="./img/svg/header-account-circle.svg" alt="Account circle" class="header__link-pic" id="acc-pic" onclick="chg(this.id)">
                                 </a>
                             </li>
                         </ul>
@@ -48,21 +52,21 @@
         <!-- Intro start -->
         <div class="intro">
             <div class="wrapper">
-                <div class="intro__title">
+                <h1 class="intro__title">
                     Discover stays<br>to live, work or just relax
-                </div>
+                </h1>
                 <!-- Добавить функционал. -->
                 <form class="search-form">
                     <fieldset class="search-form__wrap">
                         <div class="search-form__info">
                             <div class="search-form__field_first">
-                                <p class="search-form_placeholder">
+                                <p class="search-form__placeholder">
                                     Your destination or hotel name
                                 </p>
                                 <input type="text" name="destination-or-hotel" class="search-form__field" placeholder="1">
                             </div>
                             <div class="search-form__field_second">
-                                <p class="search-form_placeholder">
+                                <p class="search-form__placeholder">
                                     Check-in — Check-out
                                 </p>
                                 <input type="text" name="check-dates" class="search-form__field" placeholder="2">
@@ -70,7 +74,7 @@
                             <div class="search-form__field_third">
                                 <input type="text" name="check-dates" class="search-form__field" placeholder="3">
                             </div>
-                            <div class="search-form__field_fortt">
+                            <div class="search-form__field_forth">
                                 <button type="submit" class="search-form__field search-form__submit">Search</button>
                             </div>
                         </div>
@@ -96,5 +100,7 @@
             
         </div>
     </main>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
