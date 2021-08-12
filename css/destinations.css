@@ -1,0 +1,28 @@
+.destinations__list{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: 64px;
+}
+.destinations__item{
+    width: 192px;
+    padding: 17px 52px;
+    text-align: center;
+    border-radius: 5px;
+}
+.destinations__item:hover, .destinations__item:focus, .destinations__item:active{
+    background:#3077C6;
+    color: white;
+}
+.destinations__cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    margin-bottom: 120px;
+}
+.destinations__card-pic{
+    margin-bottom: 24px;
+}
+.destinations__card-name{
+    color: #3077C6;
+}
