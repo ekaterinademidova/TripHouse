@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
     text-align: center;
 }
 .advantages__card-pic{
