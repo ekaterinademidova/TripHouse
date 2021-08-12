@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
+    width: 622px;
     margin-bottom: 64px;
+    background: #F3F3F4;
+    border-radius: 5px;
 }
 .destinations__item{
-    width: 192px;
     padding: 17px 52px;
     text-align: center;
     border-radius: 5px;
@@ -18,10 +20,44 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
-    margin-bottom: 120px;
+    padding-bottom: 210px;
+}
+.destinations__container{
+    position:relative; 
+    width: 296px;
+    height: 296px;
+    margin-bottom: 24px;
 }
 .destinations__card-pic{
-    margin-bottom: 24px;
+    width: 296px;
+    height: 296px;
+    transition: all .2s ease;
+}
+.destinations__container:hover .destinations__card-pic{
+    filter: brightness(60%);
+}
+.destinations__button{
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    margin: 124px 84px;
+    width: 128px;
+    height: 48px;
+    background-color: white;
+    color: #3077C6;
+    font-size: 18px;
+    line-height: 21px;
+    border: 1px solid #3077C6;
+    border-radius: 5px;
+    display: none;
+}
+.destinations__button:hover, .destinations__button:focus, .destinations__button:active{
+    opacity: .90;
+}
+.destinations__container:hover .destinations__button{
+    display:block;
 }
 .destinations__card-name{
     color: #3077C6;
