@@ -14,4 +14,11 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
     margin-bottom: 120px;
+    text-align: center;
+}
+.advantages__card-pic{
+    margin-bottom: 48px;
+}
+.advantages__card-name{
+    color: #383838;
 }
