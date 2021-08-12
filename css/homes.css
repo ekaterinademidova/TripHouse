@@ -1,8 +1,11 @@
+.homes{
+    background: #EAF0F9;
+}
 .homes__cards{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
 }
 .homes__card-pic{
     margin-bottom: 24px;
