@@ -1,0 +1,118 @@
+.reviews__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    padding-bottom: 120px;
+}
+
+.reviews__card {
+    min-width: 400px;
+    min-height: 760px;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.reviews__card-pic {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.reviews__card-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: rgba(56, 56, 56, 0.7);
+    padding: 16px 0 11px 24px;
+    color: var(--general-white);
+}
+
+.reviews__info {
+    background: var(--accent-blue);
+    height: 360px;
+    padding: 24px 24px 0 24px;
+}
+
+.reviews__card-resort {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    column-gap: 5px;
+    max-width: 400px;
+}
+
+.reviews__wrapper-1 {
+    grid-column: span 7;
+    position: relative;
+    text-align: left;
+}
+
+.reviews__wrapper-2 {
+    grid-column: span 3;
+    position: relative;
+    text-align: right;
+}
+
+.reviews__card-title {
+    top: 0;
+    font-weight: 700;
+    color: #3077c6;
+    margin-bottom: 16px;
+}
+
+.reviews__card-rating {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 32px;
+    background: var(--general-blue);
+    border-radius: 8px;
+    padding: 4px 11px;
+    color: var(--general-white);
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.reviews__card-location {
+    bottom: 0;
+    color: #3077c6;
+}
+
+.reviews__card-amount {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--secondary-text);
+}
+
+.reviews__review-person {
+    display: flex;
+    position: relative;
+    margin-top: 24px;
+    height: 64px;
+}
+
+.reviews__person-pic {
+    padding: 5px;
+}
+
+.reviews__person-info {
+    padding: 7px 0 7px 16px;
+}
+
+.reviews__person-name {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.reviews__person-location {
+    color: var(--secondary-text);
+}
+
+.reviews__review-text {
+    margin-top: 17px;
+}
