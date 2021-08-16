@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/sign-up.css">
     <link rel="stylesheet" href="./css/reviews.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/media.css">
 </head>
 <body>
     <div class="top-section">
@@ -39,16 +40,21 @@
                             <!-- Изменить появление черты на изменение цвета рисунка. -->
                             <li class="header__item">
                                 <a href="#!" class="header__link-img">
-                                    <img src="./img/svg/header-night.svg" alt="Night" class="header__link-pic">
+                                    <img src="./img/svg/header-night.svg" alt="Night" class="header__link-pic pic-night">
                                 </a>
                             </li>
                             <li class="header__item">
                                 <a href="#!" class="header__link-img">
-                                    <img src="./img/svg/header-account-circle.svg" alt="Account circle" class="header__link-pic" id="acc-pic" onclick="chg(this.id)">
+                                    <img src="./img/svg/header-account-circle.svg" alt="Account circle" class="header__link-pic pic-acc" id="acc-pic" onclick="chg(this.id)">
                                 </a>
                             </li>
                         </ul>
                     </nav>
+                    <div class="header__burger burger">
+                        <span class="burger__line burger__line_first"></span>
+                        <span class="burger__line burger__line_second"></span>
+                        <span class="burger__line burger__line_third"></span>
+                    </div>
                 </div>
             </div>
         </header>
@@ -411,11 +417,40 @@
             </div>
         </div>
         <!-- Reviews end -->
+
+        <!-- Sign up 2 start -->
+        <div class="sign-up-2">
+            <div class="wrapper">
+                <div class="sign-up__container-2">
+                    <img src="./img/svg/close.svg" alt="Close" class="sign-up__close-2">
+                    <img src="./img/svg/logo-small.svg" alt="Small logo" class="sign-up__pic-2">
+                    <p class="caption sign-up__text-2">
+                        Sign up in the app and get 20% off your first booking
+                    </p>
+                    <button type="submit" class="sign-up__button-2">Install</button>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Sign up 2 end -->
     </main>
 
     <footer class="footer">
         <div class="wrapper">
-
+            <img src="./img/svg/logo-footer.svg" alt="Footer logo" class="footer__logo">
+            <nav class="footer__nav-2">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item">
+                        <a href="#!" class="footer__menu-link">About</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#!" class="footer__menu-link">Property types</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#!" class="footer__menu-link">Support</a>
+                    </li>
+                </ul>
+            </nav>
             <nav class="footer__nav">
                 <ul class="footer__menu">
                     <li class="footer__menu-item">
