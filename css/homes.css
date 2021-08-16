@@ -1,20 +1,24 @@
-.homes{
-    background: #EAF0F9;
+.homes {
+    background: var(--accent-blue);
 }
-.homes__cards{
+
+.homes__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
     padding-bottom: 120px;
 }
-.homes__card-pic{
+
+.homes__card-pic {
     margin-bottom: 24px;
 }
-.homes__card-name{
-    color: #3077C6;
+
+.homes__card-name {
+    color: #3077c6;
     margin-bottom: 24px;
 }
-.homes__card-location{
+
+.homes__card-location {
     margin-bottom: 24px;
-    color: #BFBFBF;
+    color: var(--secondary-text);
 }

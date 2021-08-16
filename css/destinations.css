@@ -1,64 +1,76 @@
-.destinations__list{
+.destinations__list {
     display: flex;
     align-items: center;
     white-space: nowrap;
     width: 622px;
     margin-bottom: 64px;
-    background: #F3F3F4;
+    background: var(--stroke-color);
     border-radius: 5px;
 }
-.destinations__item{
+
+.destinations__item {
     padding: 17px 52px;
     text-align: center;
     border-radius: 5px;
 }
-.destinations__item:hover, .destinations__item:focus, .destinations__item:active{
-    background:#3077C6;
-    color: white;
+
+.destinations__item:hover,
+.destinations__item:focus,
+.destinations__item:active {
+    background: #3077c6;
+    color: var(--general-white);
 }
-.destinations__cards{
+
+.destinations__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
     padding-bottom: 210px;
 }
-.destinations__container{
-    position:relative; 
-    width: 296px;
-    height: 296px;
+
+.destinations__container {
+    position: relative;
+    max-width: 296px;
+    max-height: 296px;
     margin-bottom: 24px;
 }
-.destinations__card-pic{
-    width: 296px;
-    height: 296px;
-    transition: all .2s ease;
+
+.destinations__card-pic {
+    max-width: 296px;
+    max-height: 296px;
+    transition: all 0.2s ease;
 }
-.destinations__container:hover .destinations__card-pic{
+
+.destinations__container:hover .destinations__card-pic {
     filter: brightness(60%);
 }
-.destinations__button{
-    position:absolute;
-    top: 0;
-    left: 0;
-    bottom:0;
-    right:0;
-    margin: 124px 84px;
-    width: 128px;
-    height: 48px;
-    background-color: white;
-    color: #3077C6;
+
+.destinations__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 128px;
+    min-height: 48px;
+    background-color: var(--general-white);
+    color: #3077c6;
     font-size: 18px;
     line-height: 21px;
-    border: 1px solid #3077C6;
+    border: 1px solid #3077c6;
     border-radius: 5px;
     display: none;
 }
-.destinations__button:hover, .destinations__button:focus, .destinations__button:active{
-    opacity: .90;
+
+.destinations__button:hover,
+.destinations__button:focus,
+.destinations__button:active {
+    opacity: 0.9;
 }
-.destinations__container:hover .destinations__button{
-    display:block;
+
+.destinations__container:hover .destinations__button {
+    display: block;
 }
-.destinations__card-name{
-    color: #3077C6;
+
+.destinations__card-name {
+    color: #3077c6;
 }

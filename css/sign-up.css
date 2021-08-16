@@ -1,33 +1,41 @@
-.sign-up__container{
+.sign-up__container {
     display: flex;
-    background: #EAF0F9;
+    background: var(--accent-blue);
     position: relative;
 }
-.sign-up__pic{
+
+.sign-up__pic {
     border-radius: 50%;
     padding: 57px 24px;
 }
-.sign-up__info{
+
+.sign-up__info {
     padding: 52px 0;
 }
-.sign-up__text{
+
+.sign-up__text {
     font-weight: 700;
     margin-bottom: 20px;
 }
-.sign-up__button{
+
+.sign-up__button {
     width: 128px;
     height: 48px;
-    background-color: white;
-    color: #3077C6;
+    background-color: var(--general-white);
+    color: #3077c6;
     font-size: 18px;
     line-height: 21px;
-    border: 1px solid #3077C6;
+    border: 1px solid #3077c6;
     border-radius: 5px;
 }
-.sign-up__button:hover, .sign-up__button:focus, .sign-up__button:active{
-    opacity: .90;
+
+.sign-up__button:hover,
+.sign-up__button:focus,
+.sign-up__button:active {
+    opacity: 0.9;
 }
-.sign-up__close{
+
+.sign-up__close {
     position: absolute;
     top: 24px;
     right: 24px;
