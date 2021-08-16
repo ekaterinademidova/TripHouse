@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 16px;
+    row-gap: 16px;
     padding-bottom: 120px;
 }
 .reviews__card{
@@ -9,6 +10,7 @@
     height: 760px;
     font-size: 18px;
     line-height: 21px;
+    grid-column: span 1;
 }
 .reviews__card-pic{
     position: relative;
