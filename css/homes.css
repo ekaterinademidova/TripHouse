@@ -1,23 +1,29 @@
-.homes{
-    background: #EAF0F9;
+.homes {
+    background: var(--bg-color);
 }
-.homes__cards{
+
+.homes__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
     row-gap: 16px;
     padding-bottom: 120px;
 }
-.homes__card{
+
+.homes__card {
     grid-column: span 1;
 }
-.homes__card-pic{
+
+.homes__card-pic {
     margin-bottom: 24px;
 }
-.homes__card-name{
-    color: #3077C6;
+
+.homes__card-name {
+    color: var(--accent-blue);
     margin-bottom: 24px;
 }
-.homes__card-location{
-    color: #BFBFBF;
+
+.homes__card-location {
+    margin-bottom: 24px;
+    color: var(--secondary-text);
 }

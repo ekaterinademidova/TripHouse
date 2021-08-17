@@ -1,33 +1,52 @@
-html{
+:root {
+    --general-blue: #10367c;
+    --accent-blue: #3077c6;
+    --accent-yellow: #f5bd41;
+    --stroke-color: #f3f3f4;
+    --text-color: #383838;
+    --general-white: #ffffff;
+    --secondary-text: #bfbfbf;
+    --bg-color: #eaf0f9;
+}
+
+html {
     box-sizing: border-box;
 }
-*, *::before, *::after{
+
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
-body{
-    font-family: 'Roboto';
+
+body {
+    font-family: "Roboto";
     font-style: 100;
     font-size: 24px;
     line-height: 1.2;
     font-weight: 400;
-    color: #383838;
+    color: var(--text-color);
 }
-img{
+
+img {
     max-width: 100%;
     height: auto;
 }
-.wrapper{
+
+.wrapper {
     max-width: 1232px;
     margin: 0 auto;
 }
-.section-title{
+
+.section-title {
     padding-top: 120px;
     padding-bottom: 104px;
     text-align: center;
     font-size: 40px;
     line-height: 47px;
 }
-.caption{
+
+.caption {
     font-size: 24px;
     line-height: 28px;
 }

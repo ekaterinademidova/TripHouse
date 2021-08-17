@@ -1,12 +1,14 @@
-.advantages__title{
+.advantages__title {
     margin-bottom: 20px;
 }
-.advantages__title-underline{
+
+.advantages__title-underline {
     width: 100px;
-    border-top: 4px solid #F5BD41;
+    border-top: 4px solid var(--accent-yellow);
     margin: 0 auto;
 }
-.advantages__cards{
+
+.advantages__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
@@ -14,12 +16,11 @@
     padding-bottom: 120px;
     text-align: center;
 }
-.advantages__card{
+
+.advantages__card {
     grid-column: span 1;
 }
-.advantages__card-pic{
+
+.advantages__card-pic {
     margin-bottom: 48px;
-}
-.advantages__card-name{
-    color: #383838;
 }
