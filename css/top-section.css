@@ -72,6 +72,35 @@
     fill: var(--accent-yellow);
 }
 
+.header__burger {
+    display: none;
+    width: 24px;
+    height: 16px;
+    position: relative;
+}
+
+.burger__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+}
+
+.burger__line_first {
+    top: 0;
+}
+
+.burger__line_second {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger__line_third {
+    bottom: 0;
+}
+
 /* Header styles end */
 
 /* Intro styles start */
@@ -146,7 +175,7 @@
     font-size: 24px;
     line-height: 28px;
     color: var(--general-white);
-    background: #3077c6;
+    background: var(--accent-blue);
     border: 0;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

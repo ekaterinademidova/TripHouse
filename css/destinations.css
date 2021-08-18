@@ -17,7 +17,7 @@
 .destinations__item:hover,
 .destinations__item:focus,
 .destinations__item:active {
-    background: #3077c6;
+    background: var(--accent-blue);
     color: var(--general-white);
 }
 
@@ -25,7 +25,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
+    row-gap: 16px;
     padding-bottom: 210px;
+}
+
+.destinations__card {
+    grid-column: span 1;
 }
 
 .destinations__container {
@@ -53,10 +58,10 @@
     min-width: 128px;
     min-height: 48px;
     background-color: var(--general-white);
-    color: #3077c6;
+    color: var(--accent-blue);
     font-size: 18px;
     line-height: 21px;
-    border: 1px solid #3077c6;
+    border: 1px solid var(--accent-blue);
     border-radius: 5px;
     display: none;
 }
@@ -72,5 +77,5 @@
 }
 
 .destinations__card-name {
-    color: #3077c6;
+    color: var(--accent-blue);
 }

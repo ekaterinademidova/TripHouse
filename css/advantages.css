@@ -12,8 +12,13 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
+    row-gap: 32px;
     padding-bottom: 120px;
     text-align: center;
+}
+
+.advantages__card {
+    grid-column: span 1;
 }
 
 .advantages__card-pic {

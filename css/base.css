@@ -1,11 +1,12 @@
 :root {
     --general-blue: #10367c;
-    --accent-blue: #eaf0f9;
+    --accent-blue: #3077c6;
     --accent-yellow: #f5bd41;
     --stroke-color: #f3f3f4;
     --text-color: #383838;
     --general-white: #ffffff;
     --secondary-text: #bfbfbf;
+    --bg-color: #eaf0f9;
 }
 
 html {
