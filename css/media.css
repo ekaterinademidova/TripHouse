@@ -162,13 +162,17 @@
     }
 
     .destinations__item {
-        padding: 5px 15px;
-        text-align: center;
-        border-radius: 5px;
+        padding: 5px;
         border: 1px solid var(--stroke-color);
         font-size: 19px;
         line-height: 22px;
+        overflow: hidden;
         text-overflow: clip;
+        margin-right: 16px;
+    }
+
+    .destinations__item:last-child {
+        margin-right: 0;
     }
 
     .destinations__cards {
