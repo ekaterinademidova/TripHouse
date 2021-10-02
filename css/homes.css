@@ -3,15 +3,7 @@
 }
 
 .homes__cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 16px;
-    row-gap: 16px;
     padding-bottom: 120px;
-}
-
-.homes__card {
-    grid-column: span 1;
 }
 
 .homes__card-pic {
@@ -24,6 +16,14 @@
 }
 
 .homes__card-location {
-    margin-bottom: 24px;
     color: var(--secondary-text);
+}
+
+.homes__card {
+    max-width: 296px;
+    max-height: 428px;
+}
+
+.homes .arrow {
+    top: 128px;
 }
