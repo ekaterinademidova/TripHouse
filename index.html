@@ -86,16 +86,16 @@
                                 <p class="search-form__placeholder">
                                     Your destination or hotel name
                                 </p>
-                                <input type="text" name="destination-or-hotel" class="search-form__field" placeholder="Name..." required>
+                                <input id="inputName" type="text" name="destination-or-hotel" class="search-form__field" placeholder="Name..." required>
                             </div>
                             <div class="search-form__field_second">
                                 <p class="search-form__placeholder">
                                     Check-in — Check-out
                                 </p>
-                                <input type="text" name="datefilter" class="search-form__field" value="" placeholder="Check-in — Check-out"  required>
+                                <input id="inputDates" type="text" name="datefilter" class="search-form__field" value="" placeholder="Check-in — Check-out" readonly required>
                             </div>
                             <div class="search-form__field_third">
-                                <input id="inputVR" type="text" name="visitors-rooms" class="search-form__field" placeholder="0 Adults — 0 Children — 0 Room" readonly  required>
+                                <input id="inputVR" type="text" name="visitors-rooms" class="search-form__field" placeholder="0 Adults — 0 Children — 0 Room" readonly required>
                                 <div id="selection" class="selection">
                                     <div class="selection__string adults">
                                         <p class="string-name">Adults</p>
@@ -169,11 +169,13 @@
                     <div class="sign-in__info">
                         <h3 class="sig-in__title caption">Sign in</h3>
                         
-                        <label for="email">Email address</label>   
-                        <input type="text" name="email" type="email" required>
+                        <label for="email">Email address</label> 
+                        <p class="error err-email">* required</p>  
+                        <input class="email" type="text" name="email" type="email" required>
 
                         <label for="password">Password</label>   
-                        <input type="password" name="password" type="password" required>
+                        <p class="error err-password">* required</p>  
+                        <input class="password" type="password" name="password" type="password" required>
                         
                         <button class="sign-in__btn" type="submit">Sign in</button>   
                     </div>
@@ -944,6 +946,7 @@
     <script src="./js/menu.js"></script>
     <script src="./js/date-range-picker.js"></script>
     <script src="./js/search-form.js"></script>
+    <script src="./js/sign-in-form.js"></script>
     <script src="./js/carousels.js"></script>
     <script src="./js/tabs.js"></script>
     <script src="./js/sign-up.js"></script>
