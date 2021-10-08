@@ -1,11 +1,16 @@
-const inputVR = document.querySelector('#inputVR');
-const selection = document.querySelector('#selection');
+const formSearch = document.querySelector('.search-form');
+const listInputs = formSearch.querySelectorAll('.search-form__field');
 
-const listStrings = document.querySelectorAll('.selection__string');
+const inputName = formSearch.querySelector('#inputName');
 
+const inputDates = formSearch.querySelector('#inputDates');
+
+const inputVR = formSearch.querySelector('#inputVR');
+const selection = formSearch.querySelector('#selection');
+const listStrings = formSearch.querySelectorAll('.selection__string');
 statusSel = false;
 
-const listInputs = document.querySelectorAll('.search-form__field');
+const btnSearchForm = formSearch.querySelector('.search-form__submit')
 
 for(let i = 0; i < listInputs.length; i++) {
     listInputs[i].onfocus = function() { listInputs[i].classList.add('active-field'); };
@@ -103,3 +108,39 @@ const result = () => {
     
     inputVR.setAttribute('value', `${adults} Adults — ${children} Children — ${rooms} Room`)
 };
+
+btnSearchForm.addEventListener('click', function(event) {
+    event.preventDefault();
+    const delimeter = " — "; 
+
+    const name = inputName.value.trim();
+
+    const dates = inputDates.value;
+    const datesArray = dates.split(delimeter, 2);
+
+    const info = inputVR.value;
+    const infoArray = info.split(delimeter, 3);
+
+    let str = '';
+
+    if (name.length) {
+        str += `
+        Place: ${name};`;
+    }
+    if (datesArray[0] == datesArray[1]) {
+        str += `
+        Date: ${datesArray[0]};`;
+    } else {
+        str += `
+        Start date: ${datesArray[0]};
+        End date: ${datesArray[1]};`;
+    }
+    if (info.length) {
+        str += `
+        Information: ${infoArray[0]}, ${infoArray[1]}, ${infoArray[2]}.`;
+    }
+
+    if (str.length) {
+        alert(str);
+    }
+})
