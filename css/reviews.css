@@ -1,8 +1,4 @@
 .reviews__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 16px;
-    row-gap: 16px;
     padding-bottom: 120px;
 }
 
@@ -11,7 +7,6 @@
     height: 760px;
     font-size: 18px;
     line-height: 21px;
-    grid-column: span 1;
 }
 
 .reviews__card-pic {
@@ -119,4 +114,13 @@
 .reviews__review-text {
     max-width: 352px;
     margin-top: 17px;
+}
+
+.reviews__card {
+    max-width: 400px;
+    max-height: 760px;
+}
+
+.reviews .arrow {
+    top: 180px;
 }

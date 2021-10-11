@@ -5,8 +5,10 @@
     --stroke-color: #f3f3f4;
     --text-color: #383838;
     --general-white: #ffffff;
+    --general-black: #000000;
     --secondary-text: #bfbfbf;
     --bg-color: #eaf0f9;
+    --arrow-shadow-color: rgba(0, 0, 0, 0.25);
 }
 
 html {
@@ -49,4 +51,62 @@ img {
 .caption {
     font-size: 24px;
     line-height: 28px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+}
+
+.slider {
+    width: 9999px;
+    list-style: none;
+    transition: margin-left 1s;
+    display: flex;
+}
+
+.slider li {
+    margin-right: 16px;
+    display: inline-block;
+}
+
+.slider li:last-child {
+    margin-right: 0;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px var(--arrow-shadow-color);
+    background-color: var(--stroke-color);
+}
+
+.arrow:focus {
+    outline: none;
+}
+
+.arrow:hover {
+    background: var(--secondary-text);
+    cursor: pointer;
+}
+
+.prev {
+    display: none;
+    left: -20px;
+}
+
+.next {
+    right: -20px;
+}
+
+.gallery {
+    max-width: 100%;
+    overflow: hidden;
 }
