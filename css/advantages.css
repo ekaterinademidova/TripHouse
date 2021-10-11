@@ -22,5 +22,6 @@
 }
 
 .advantages__card-pic {
+    max-width: 100px;
     margin-bottom: 48px;
 }
