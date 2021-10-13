@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
-    width: 622px;
+    max-width: 644px;
     margin-bottom: 64px;
     background: var(--stroke-color);
     border-radius: 5px;
@@ -11,7 +11,18 @@
 .destinations__item {
     padding: 17px 52px;
     text-align: center;
-    border-radius: 5px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.destinations__item:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.destinations__item:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .destinations__item:hover,
@@ -19,18 +30,43 @@
 .destinations__item:active {
     background: var(--accent-blue);
     color: var(--general-white);
+    opacity: 0.8;
+}
+
+.active {
+    background: var(--accent-blue);
+    color: var(--general-white);
+}
+
+.destinations__cards-container {
+    position: relative;
+    padding-bottom: 210px;
 }
 
 .destinations__cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 16px;
-    row-gap: 16px;
-    padding-bottom: 210px;
+    row-gap: 48px;
+    max-height: 376px;
+    overflow: hidden;
+}
+
+.full {
+    max-height: 100%;
+}
+
+.cities {
+    display: none;
+}
+
+.places {
+    display: none;
 }
 
 .destinations__card {
     grid-column: span 1;
+    max-height: 376px;
 }
 
 .destinations__container {
@@ -78,4 +114,11 @@
 
 .destinations__card-name {
     color: var(--accent-blue);
+}
+
+.destinations .arrow {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
 }

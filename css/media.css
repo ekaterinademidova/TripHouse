@@ -1,27 +1,166 @@
-@media screen and (max-width: 361px) {
-    .section-title {
-        padding-top: 40px;
-        padding-bottom: 32px;
-        font-size: 28px;
-        line-height: 33px;
+@media screen and (max-width: 1280px) {
+    .wrapper {
+        max-width: 960px;
+        padding: 0 16px;
     }
 
     .caption {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .prev {
+        left: -10px;
+    }
+
+    .next {
+        right: -10px;
+    }
+
+    .intro__title {
+        margin-bottom: 60px;
+    }
+
+    .search-form__field {
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .search-form__submit {
+        font-size: 20px;
+    }
+
+    .homes__card {
+        max-width: 220px;
+    }
+
+    .homes .arrow {
+        top: 90px;
+    }
+
+    .destinations__cards {
+        max-height: 316px;
+    }
+
+    .full {
+        max-height: 100%;
+    }
+
+    .destinations__card {
+        max-height: 316px;
+    }
+
+    .destinations__card-pic {
+        max-width: 220px;
+        max-height: 220px;
+    }
+
+    .reviews .arrow {
+        top: 129px;
+    }
+
+    .reviews__card {
+        max-width: 299px;
+        height: 647px;
+    }
+
+    .reviews__info {
+        padding: 10px;
+        height: 100%;
+    }
+
+    .reviews__card-amount {
         font-size: 12px;
-        line-height: 14px;
+    }
+
+    .footer__nav,
+    .footer__info {
+        padding: 0 60px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .wrapper {
+        max-width: 768px;
+    }
+
+    .intro__title {
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+
+    .search-form__placeholder {
+        font-size: 16px;
+    }
+
+    .search-form__field {
+        font-size: 12px;
+    }
+
+    .search-form__submit {
+        font-size: 18px;
+    }
+
+    .homes__card {
+        max-width: 234px;
+    }
+
+    .homes .arrow {
+        top: 97px;
+    }
+
+    .destinations__cards {
+        grid-template-columns: repeat(3, 1fr);
+        max-height: 330px;
+    }
+
+    .full {
+        max-height: 100%;
+    }
+
+    .destinations__card {
+        max-height: 330px;
+    }
+
+    .destinations__card-pic {
+        max-width: 234px;
+        max-height: 234px;
+    }
+
+    .reviews .arrow {
+        top: 160px;
+    }
+
+    .reviews__card {
+        max-width: 360px;
+        height: 760px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        max-width: 500px;
+    }
+
+    .caption {
+        font-size: 16px;
+        line-height: 18px;
     }
 
     .top-section {
-        padding: 12px 16px 0 16px;
-        min-height: 533px;
+        min-height: 580px;
     }
 
     .header {
         margin-bottom: 40px;
     }
 
+    .header .wrapper {
+        max-width: 100%;
+    }
+
     .header__wrapper {
-        padding-top: 0;
+        padding-top: 20px;
     }
 
     .header__logo-pic {
@@ -31,10 +170,6 @@
 
     .header__item {
         margin-right: 16px;
-    }
-
-    .header__link-text {
-        display: none;
     }
 
     .svg-night svg {
@@ -47,23 +182,27 @@
         height: 24px;
     }
 
-    .header__burger {
+    .burger::before {
         display: block;
     }
 
+    .text-list .header__list {
+        display: none;
+    }
+
     .intro__title {
-        max-width: 328px;
-        font-weight: 400;
-        font-size: 30px;
-        line-height: 35px;
-        margin: 0;
-        margin-bottom: 30px;
+        max-width: 440px;
+        font-size: 32px;
+        line-height: 34px;
+        margin-bottom: 60px;
     }
 
     .search-form__info {
         background: var(--accent-yellow);
         row-gap: 8px;
+        margin: 0 auto;
         margin-bottom: 32px;
+        max-width: 328px;
         min-height: 232px;
         padding: 8px;
     }
@@ -72,23 +211,22 @@
     .search-form__field_second,
     .search-form__field_third,
     .search-form__field_forth {
-        grid-column: span 10;
+        grid-column: span 13;
     }
 
     .search-form__field {
         border-radius: 5px;
         width: 100%;
         height: 48px;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         padding: 15px 10px;
         margin-top: 0px;
     }
 
     .search-form__submit {
-        padding: 14px 124px;
-        font-size: 19px;
-        line-height: 22px;
+        font-size: 20px;
+        line-height: 20px;
     }
 
     .search-form__placeholder {
@@ -99,99 +237,73 @@
         margin-bottom: 40px;
     }
 
-    .advantages .section-title {
-        padding-top: 24px;
-        padding-bottom: 32px;
+    .sign-in-form {
+        margin-top: 100px;
+        width: 328px;
+        height: 298px;
+        padding: 20px 15px;
     }
 
-    .advantages__title-underline {
-        display: none;
+    .sig-in__title {
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .sign-in__btn {
+        font-size: 20px;
     }
 
     .advantages__cards {
-        padding-bottom: 40px;
-    }
-
-    .advantages__card {
-        grid-column: span 4;
-    }
-
-    .advantages__card-pic {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 16px;
-    }
-
-    .advantages .caption {
-        font-size: 15px;
-        line-height: 18px;
-    }
-
-    .homes {
-        padding: 0 16px 0 16px;
-    }
-
-    .homes__cards {
-        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 16px;
+        row-gap: 32px;
+        padding-bottom: 120px;
+        text-align: center;
     }
 
     .homes__card {
-        grid-column: span 2;
+        max-width: 226px;
     }
 
-    .homes__card-pic {
-        width: 156px;
-        height: 156px;
-        margin-bottom: 8px;
+    .homes .arrow {
+        top: 93px;
     }
 
-    .homes__card-name {
-        color: var(--accent-blue);
-        margin-bottom: 4px;
+    .destinations__cards {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 286px;
     }
 
-    .destinations {
-        padding: 0 16px 0 16px;
+    .full {
+        max-height: 100%;
     }
 
     .destinations__list {
         width: 100%;
-        margin-bottom: 24px;
-        background: none;
-        border-radius: 0;
     }
 
     .destinations__item {
-        padding: 5px;
-        border: 1px solid var(--stroke-color);
+        padding: 15px 35px;
         font-size: 19px;
         line-height: 22px;
-        overflow: hidden;
-        text-overflow: clip;
-        margin-right: 16px;
     }
 
-    .destinations__item:last-child {
-        margin-right: 0;
+    .destinations__cards-container {
+        padding-bottom: 100px;
     }
 
-    .destinations__cards {
-        padding-bottom: 40px;
+    .destinations .arrow {
+        bottom: 40px;
     }
-
     .destinations__card {
-        grid-column: span 2;
-    }
-
-    .destinations__container {
-        width: 156px;
-        height: 156px;
-        margin-bottom: 8px;
+        max-height: 286px;
     }
 
     .destinations__card-pic {
-        width: 156px;
-        height: 156px;
+        max-width: 226px;
+        max-height: 226px;
     }
 
     .sign-up {
@@ -199,83 +311,20 @@
     }
 
     .reviews {
-        padding: 0 16px 0 16px;
-        background: var(--bg-color);
+        background-color: var(--bg-color);
     }
 
     .reviews__cards {
-        padding-bottom: 48px;
+        padding: 0 34px;
+    }
+
+    .reviews .arrow {
+        top: 180px;
     }
 
     .reviews__card {
-        width: 328px;
-        max-height: 590px;
-        font-size: 15px;
-        line-height: 18px;
-        grid-column: span 3;
-    }
-
-    .reviews__card-pic {
-        position: relative;
-        width: 328px;
-        height: 328px;
-    }
-
-    .reviews__card-stats {
-        display: none;
-    }
-
-    .reviews__info {
-        background: #eaf0f9;
-        max-width: 328px;
-        height: 280px;
-        padding: 12px 0 0 0;
-    }
-
-    .reviews__card-resort {
-        position: relative;
-        height: 44px;
-    }
-
-    .reviews__card-rating {
-        width: 40px;
-        height: 26px;
-        padding: 3px 9px;
-        font-size: 15px;
-        line-height: 20px;
-    }
-
-    .reviews__card-amount {
-        font-size: 12px;
-        line-height: 14px;
-    }
-
-    .reviews__review-person {
-        margin-top: 12px;
-        height: 52px;
-    }
-
-    .reviews__person-pic {
-        width: 44px;
-        height: 44px;
-        padding: 4px 0 0 0;
-    }
-
-    .reviews__person-info {
-        padding: 7px 0 7px 8px;
-    }
-
-    .reviews__person-name {
-        font-weight: 700;
-        margin-bottom: 4px;
-    }
-
-    .reviews__person-location {
-        color: var(--secondary-text);
-    }
-
-    .reviews__review-text {
-        margin-top: 17px;
+        max-width: 400px;
+        max-height: 760px;
     }
 
     .sign-up-2 {
@@ -321,5 +370,200 @@
     .footer__info {
         font-size: 12px;
         line-height: 14px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .wrapper {
+        max-width: 414px;
+    }
+
+    .section-title {
+        padding-top: 40px;
+        padding-bottom: 32px;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    .advantages .section-title {
+        padding-top: 24px;
+        padding-bottom: 32px;
+    }
+
+    .advantages__title-underline {
+        display: none;
+    }
+
+    .advantages__cards {
+        padding-bottom: 40px;
+    }
+
+    .advantages__card {
+        grid-column: span 2;
+    }
+
+    .homes__cards {
+        padding-bottom: 40px;
+    }
+
+    .homes__card {
+        max-width: 182px;
+    }
+
+    .homes__card-pic {
+        margin-bottom: 8px;
+    }
+
+    .homes__card-name {
+        margin-bottom: 4px;
+    }
+
+    .homes .arrow {
+        top: 71px;
+    }
+
+    .destinations__cards {
+        max-height: 244px;
+    }
+
+    .full {
+        max-height: 100%;
+    }
+
+    .destinations__list {
+        max-width: 380px;
+        margin-bottom: 64px;
+        background: var(--stroke-color);
+        border-radius: 5px;
+    }
+
+    .destinations__item {
+        padding: 10px 20px;
+    }
+
+    .destinations__card {
+        max-height: 244px;
+    }
+
+    .destinations__container {
+        margin-bottom: 8px;
+    }
+
+    .destinations__card-pic {
+        max-width: 182px;
+        max-height: 182px;
+    }
+
+    .reviews__cards {
+        padding: 0;
+    }
+
+    .reviews .arrow {
+        top: 144px;
+    }
+
+    .reviews__card {
+        max-width: 380px;
+        max-height: 680px;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .reviews__card-stats {
+        display: none;
+    }
+
+    .reviews__info {
+        padding: 12px 0 0 0;
+        min-height: 280px;
+        max-height: 280px;
+    }
+
+    .reviews__card-rating {
+        width: 40px;
+        height: 26px;
+        padding: 3px 9px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .reviews__review-person {
+        margin-top: 12px;
+        height: 52px;
+    }
+
+    .reviews__person-pic {
+        width: 44px;
+        height: 44px;
+        padding: 4px 0 0 0;
+    }
+
+    .reviews__person-info {
+        padding: 7px 0 7px 8px;
+    }
+
+    .reviews__person-name {
+        margin-bottom: 4px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .wrapper {
+        max-width: 360px;
+    }
+
+    .caption {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .advantages__card {
+        grid-column: span 4;
+    }
+
+    .advantages__card-pic {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 16px;
+    }
+
+    .advantages .caption {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .homes__card {
+        max-width: 156px;
+    }
+
+    .homes .arrow {
+        top: 58px;
+    }
+
+    .destinations__cards {
+        max-height: 192px;
+    }
+
+    .full {
+        max-height: 100%;
+    }
+
+    .destinations__item {
+        padding: 10px;
+    }
+
+    .destinations__card {
+        max-height: 192px;
+    }
+
+    .destinations__card-pic {
+        max-width: 156px;
+        max-height: 156px;
+    }
+
+    .reviews__card {
+        max-width: 328px;
+        max-height: 628px;
     }
 }

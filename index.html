@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="./css/reviews.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/media.css">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
     <div class="top-section">
@@ -30,13 +37,17 @@
                     </div>
                     <nav class="header__nav">
                         <ul class="header__list">
-                            <li class="header__item">
-                                <a href="#!" class="header__link-text">Stays</a>
-                                <div class="header__link-underline"></div>
-                            </li>
-                            <li class="header__item">
-                                <a href="#!" class="header__link-text">Attractions</a>
-                                <div class="header__link-underline"></div>
+                            <li class="header__item text-list">
+                                <ul class="header__list">
+                                    <li class="header__item show-intro">
+                                        <a href="#!" class="header__link-text">Stays</a>
+                                        <div class="header__link-underline"></div>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="#!" class="header__link-text">Attractions</a>
+                                        <div class="header__link-underline"></div>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="header__item">
                                 <a href="#!" class="header__link-svg svg-night">
@@ -45,7 +56,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li class="header__item">
+                            <li class="header__item show-authorization">
                                 <a href="#!" class="header__link-svg svg-acc">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20 0C8.96 0 0 8.96 0 20C0 31.04 8.96 40 20 40C31.04 40 40 31.04 40 20C40 8.96 31.04 0 20 0ZM20 6C23.32 6 26 8.68 26 12C26 15.32 23.32 18 20 18C16.68 18 14 15.32 14 12C14 8.68 16.68 6 20 6ZM20 34.4C15 34.4 10.58 31.84 8 27.96C8.06 23.98 16 21.8 20 21.8C23.98 21.8 31.94 23.98 32 27.96C29.42 31.84 25 34.4 20 34.4Z" fill="white"/>
@@ -53,10 +64,8 @@
                                 </a>
                             </li>
                             <li class="header__item">
-                                <div class="header__burger burger">
-                                    <span class="burger__line burger__line_first"></span>
-                                    <span class="burger__line burger__line_second"></span>
-                                    <span class="burger__line burger__line_third"></span>
+                                <div class="header__burger">
+                                    <i class="fas fa-bars burger"></i>
                                 </div>
                             </li>
                         </ul>
@@ -79,20 +88,67 @@
                                 <p class="search-form__placeholder">
                                     Your destination or hotel name
                                 </p>
-                                <input type="text" name="destination-or-hotel" class="search-form__field" placeholder="1">
+                                <input id="inputName" type="text" name="destination-or-hotel" class="search-form__field" placeholder="Name..." required>
                             </div>
                             <div class="search-form__field_second">
                                 <p class="search-form__placeholder">
                                     Check-in — Check-out
                                 </p>
-                                <input type="text" name="check-dates" class="search-form__field" placeholder="2">
+                                <input id="inputDates" type="text" name="datefilter" class="search-form__field" value="" placeholder="Check-in — Check-out" readonly required>
                             </div>
                             <div class="search-form__field_third">
-                                <input type="text" name="check-dates" class="search-form__field" placeholder="3">
+                                <input id="inputVR" type="text" name="visitors-rooms" class="search-form__field" placeholder="0 Adults — 0 Children — 0 Room" readonly required>
+                                <div id="selection" class="selection">
+                                    <div class="selection__string adults">
+                                        <p class="string-name">Adults</p>
+                                        <button type="submit" class="down invisible">-</button>
+                                        <p class="count amount-adults">0</p>
+                                        <button type="submit" class="up">+</button>
+                                    </div>
+                                    <div class="selection__string children">
+                                        <p class="string-name">Children</p>
+                                        <button type="submit" class="down invisible">-</button>
+                                        <p class="count amount-children">0</p>
+                                        <button type="submit" class="up">+</button>
+                                    </div>
+                                    <div class="selection__string rooms">
+                                        <p class="string-name">Rooms</p>
+                                        <button type="submit" class="down invisible">-</button>
+                                        <p class="count amount-rooms">0</p>
+                                        <button type="submit" class="up">+</button>
+                                    </div>
+                                    <div class="additionally">
+                                        <p class="text">
+                                            What is the age of the child you’re travelling with?
+                                        </p>
+                                        <select name="children-age" class="children-age" onfocus="this.size=3;" onblur="this.size=1;" onchange="this.size=1; this.blur();">
+                                            <option value="1" selected>1 year old</option>
+                                            <option value="2">2 years old</option>
+                                            <option value="3">3 years old</option>
+                                            <option value="4">4 years old</option>
+                                            <option value="5">5 years old</option>
+                                            <option value="6">6 years old</option>
+                                            <option value="7">7 years old</option>
+                                            <option value="8">8 years old</option>
+                                            <option value="9">9 years old</option>
+                                            <option value="10">10 years old</option>
+                                            <option value="11">11 years old</option>
+                                            <option value="12">12 years old</option>
+                                            <option value="13">13 years old</option>
+                                            <option value="14">14 years old</option>
+                                            <option value="15">15 years old</option>
+                                            <option value="16">16 years old</option>
+                                            <option value="17">17 years old</option>
+                                            <option value="18">18 years old</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="search-form__field_forth">
                                 <button type="submit" class="search-form__field search-form__submit">Search</button>
                             </div>
+
+                            
                         </div>
                     </fieldset>
                 </form>
@@ -103,11 +159,34 @@
                     <a href="#!" class="intro__app-link">
                        <img src="./img/jpg/app-store.jpg" alt="App Store" class="intro__app-pic">
                    </a>
-                    
                 </div>
             </div>
         </div>
     <!-- Intro end -->
+
+    <!-- Authorization start -->
+    <div class="authorization">
+        <div class="wrapper">
+            <form class="sign-in-form">
+                <fieldset class="sign-in__wrap">
+                    <div class="sign-in__info">
+                        <h3 class="sig-in__title caption">Sign in</h3>
+                        
+                        <label for="email">Email address</label> 
+                        <p class="error err-email">* required</p>  
+                        <input class="email" type="text" name="email" type="email" required>
+
+                        <label for="password">Password</label>   
+                        <p class="error err-password">* required</p>  
+                        <input class="password" type="password" name="password" type="password" required>
+                        
+                        <button class="sign-in__btn" type="submit">Sign in</button>   
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!-- Authorization and -->
     </div>
     
     <main class="main">
@@ -159,41 +238,79 @@
                     </h3>
                 </section>
                 <div class="homes__cards">
-                    <div class="homes__card">
-                        <img src="./img/jpg/home-1.jpg" alt="Home 1" class="homes__card-pic">
-                        <p class="caption homes__card-name">
-                            Hotel Leopold
-                        </p>
-                        <p class="caption homes__card-location">
-                            Saint Petersburg, Russia
-                        </p>
-                    </div>
-                    <div class="homes__card">
-                        <img src="./img/jpg/home-2.jpg" alt="Home 2" class="homes__card-pic">
-                        <p class="caption homes__card-name">
-                            Apartment Sunshine
-                        </p>
-                        <p class="caption homes__card-location">
-                            Santa  Cruz de Tenerife, Spain
-                        </p>
-                    </div>
-                    <div class="homes__card">
-                        <img src="./img/jpg/home-3.jpg" alt="Home 3" class="homes__card-pic">
-                        <p class="caption homes__card-name">
-                            Villa Kunerad
-                        </p>
-                        <p class="caption homes__card-location">
-                            Vysokie Tatry, Slowakia
-                        </p>
-                    </div>
-                    <div class="homes__card">
-                        <img src="./img/jpg/home-4.jpg" alt="Home 4" class="homes__card-pic">
-                        <p class="caption homes__card-name">
-                            Hostel Friendship
-                        </p>
-                        <p class="caption homes__card-location">
-                            Berlin, Germany
-                        </p>
+                    <div id="homes__carousel" class="carousel">
+                        <button id="prevH" class="arrow prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="gallery">
+                            <ul class="slider">
+                                <li>
+                                    <div class="homes__card">
+                                        <img src="./img/jpg/home-1.jpg" alt="Home 1" class="homes__card-pic">
+                                        <p class="caption homes__card-name">
+                                            Hotel Leopold
+                                        </p>
+                                        <p class="caption homes__card-location">
+                                            Saint Petersburg, Russia
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="homes__card">
+                                        <img src="./img/jpg/home-2.jpg" alt="Home 2" class="homes__card-pic">
+                                        <p class="caption homes__card-name">
+                                            Apartment Sunshine
+                                        </p>
+                                        <p class="caption homes__card-location">
+                                            Santa  Cruz de Tenerife, Spain
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="homes__card">
+                                        <img src="./img/jpg/home-3.jpg" alt="Home 3" class="homes__card-pic">
+                                        <p class="caption homes__card-name">
+                                            Villa Kunerad
+                                        </p>
+                                        <p class="caption homes__card-location">
+                                            Vysokie Tatry, Slowakia
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="homes__card">
+                                        <img src="./img/jpg/home-4.jpg" alt="Home 4" class="homes__card-pic">
+                                        <p class="caption homes__card-name">
+                                            Hostel Friendship
+                                        </p>
+                                        <p class="caption homes__card-location">
+                                            Berlin, Germany
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="homes__card">
+                                        <img src="./img/jpg/home-5.jpg" alt="Home 5" class="homes__card-pic">
+                                        <p class="caption homes__card-name">
+                                            Ubud Bali Resort&SPA
+                                        </p>
+                                        <p class="caption homes__card-location">
+                                            Bali, Indonesia
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="homes__card">
+                                        <img src="./img/jpg/home-6.jpg" alt="Home 6" class="homes__card-pic">
+                                        <p class="caption homes__card-name">
+                                            Rokoko Hotel
+                                        </p>
+                                        <p class="caption homes__card-location">
+                                            Ourika, Marocco
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="nextH" class="arrow next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -210,61 +327,253 @@
                 </section>
                 <div class="destinations__categories">
                     <ul class="destinations__list">
-                        <li class="destinations__item">
+                        <li class="destinations__item show-regions active">
                             Regions
                         </li>
-                        <li class="destinations__item">
+                        <li class="destinations__item show-cities">
                             Cities
                         </li>
-                        <li class="destinations__item">
+                        <li class="destinations__item show-places">
                             Places of interest
                         </li>
                     </ul>
                 </div>
-                <div class="destinations__cards">
-                    <div class="destinations__card">
-                        <div class="destinations__container">
-                            <img src="./img/jpg/destination-r1.jpg" alt="Home 1" class="destinations__card-pic">
-                            <button type="submit" class="destinations__button">Book now</button>
+                <div class="destinations__cards-container">
+
+                    <div class="destinations__cards regions">
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r1.jpg" alt="Region 1" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Maldives
+                            </p>
                         </div>
-                        <p class="caption destinations__card-name">
-                            Maldives
-                        </p>
-                    </div>
-                    <div class="destinations__card">
-                        <div class="destinations__container">
-                            <img src="./img/jpg/destination-r2.jpg" alt="Home 2" class="destinations__card-pic">
-                            <button type="submit" class="destinations__button">Book now</button>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r2.jpg" alt="Region 2" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Spain
+                            </p>
                         </div>
-                        <p class="caption destinations__card-name">
-                            Spain
-                        </p>
-                    </div>
-                    <div class="destinations__card">
-                        <div class="destinations__container">
-                            <img src="./img/jpg/destination-r3.jpg" alt="Home 3" class="destinations__card-pic">
-                            <button type="submit" class="destinations__button">Book now</button>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r3.jpg" alt="Region 3" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Norway
+                            </p>
                         </div>
-                        <p class="caption destinations__card-name">
-                            Norway
-                        </p>
-                    </div>
-                    <div class="destinations__card">
-                        <div class="destinations__container">
-                            <img src="./img/jpg/destination-r4.jpg" alt="Home 4" class="destinations__card-pic">
-                            <button type="submit" class="destinations__button">Book now</button>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r4.jpg" alt="Region 4" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Island
+                            </p>
                         </div>
-                        <p class="caption destinations__card-name">
-                            Island
-                        </p>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r5.jpg" alt="Region 5" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Japan
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r6.jpg" alt="Region 6" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                France
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r7.jpg" alt="Region 7" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Scottland
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-r8.jpg" alt="Region 8" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Russia
+                            </p>
+                        </div>
                     </div>
+
+                    <div class="destinations__cards cities">
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c1.jpg" alt="City 1" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Berlin, Germany
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c2.jpg" alt="City 2" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Paris, France
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c3.jpg" alt="City 3" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Budapest, Hungary
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c4.jpg" alt="City 4" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                London, United Kingdom
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c5.jpg" alt="City 5" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Barcelona, Spain
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c6.jpg" alt="City 6" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Tbilisi, Georgia
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c7.jpg" alt="City 7" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Moscow, Russia
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-c8.jpg" alt="City 8" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Amsterdam, Netherlands
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="destinations__cards places">
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p1.jpg" alt="Place 1" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Edinburgh Castle, Edinburgh, United Kingdom
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p2.jpg" alt="Place 2" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Neuschwanstein, Fussen, Germany
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p3.jpg" alt="Place 3" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Big Ben, London, United Kingdom
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p4.jpg" alt="Place 4" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Colosseum, Roma, Italy
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p5.jpg" alt="Place 5" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Matterhorn, Zermatt, Switzerland
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p6.jpg" alt="Place 6" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Morskie Oko, Poland
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p7.jpg" alt="Place 7" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Krka, Croatia
+                            </p>
+                        </div>
+                        <div class="destinations__card">
+                            <div class="destinations__container">
+                                <img src="./img/jpg/destination-p8.jpg" alt="Place 8" class="destinations__card-pic">
+                                <button type="submit" class="destinations__button">Book now</button>
+                            </div>
+                            <p class="caption destinations__card-name">
+                                Cabo da roca, Sintra, Portugal
+                            </p>
+                        </div>
+                    </div>
+
+                    <button id="btnOpenClose" class="arrow"><i class="fas fa-chevron-down"></i></button>
+
                 </div>
             </div>
         </div>
         <!-- Destinations end -->
 
         <!-- Sign up start -->
-        <div class="sign-up">
+        <div id="sign-up" class="sign-up">
             <div class="wrapper">
                 <div class="sign-up__container">
                     <img src="./img/jpg/user.jpg" alt="User" class="sign-up__pic">
@@ -274,7 +583,7 @@
                         </p>
                         <button type="submit" class="sign-up__button">Sign up</button>
                     </div>
-                    <img src="./img/svg/close.svg" alt="Close" class="sign-up__close">
+                    <img id="closeSU" src="./img/svg/close.svg" alt="Close" class="sign-up__close">
                 </div>
                 
             </div>
@@ -290,143 +599,255 @@
                     </h3>
                 </section>
                 <div class="reviews__cards">
-                    <div class="reviews__card">
-                        <div class="reviews__card-pic">
-                            <img src="./img/jpg/review-1.jpg" alt="Ubud Bali Resort&SPA" class="reviews__card-thumb">
-                            <div class="reviews__card-stats">
-                                <h3 class="reviews__card-price">From 250 USD</h3>
-                            </div>
-                        </div>
-                        <div class="reviews__info">
-                            <div class="reviews__card-resort">
-                                <div class="reviews__wrapper-1">
-                                    <p class="reviews__card-title">
-                                        Ubud Bali Resort&SPA
-                                    </p>
-                                    <p class="reviews__card-location">
-                                        Bali, Indonesia
-                                    </p>
-                                </div>
-                                <div class="reviews__wrapper-2">
-                                    <div class="reviews__card-rating">
-                                        9,4
+                    <div id="reviews__carousel" class="carousel">
+                        <button id="prevR" class="arrow prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="gallery">
+                            <ul class="slider">
+                                <li>
+                                    <div class="reviews__card">
+                                        <div class="reviews__card-pic">
+                                            <img src="./img/jpg/review-1.jpg" alt="Ubud Bali Resort&SPA" class="reviews__card-thumb">
+                                            <div class="reviews__card-stats">
+                                                <h3 class="reviews__card-price">From 250 USD</h3>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__card-resort">
+                                                <div class="reviews__wrapper-1">
+                                                    <p class="reviews__card-title">
+                                                        Ubud Bali Resort&SPA
+                                                    </p>
+                                                    <p class="reviews__card-location">
+                                                        Bali, Indonesia
+                                                    </p>
+                                                </div>
+                                                <div class="reviews__wrapper-2">
+                                                    <div class="reviews__card-rating">
+                                                        9,4
+                                                    </div>
+                                                    <p class="reviews__card-amount">
+                                                        1324 reviews
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__card-review">
+                                                <div class="reviews__review-person">
+                                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
+                                                    <div class="reviews__person-info">
+                                                        <p class="reviews__person-name">
+                                                            Hanna Ivanova
+                                                        </p>
+                                                        <p class="reviews__person-location">
+                                                            🇺🇦 Ukraine
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="reviews__review-text">
+                                                    Great location, really pleasant and clean rooms, but the thing that makes this such a
+                                                    good place to stay are the staff. All of the people are incredibly helpful and generous
+                                                    with their time and advice. 
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="reviews__card-amount">
-                                        1324 reviews
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="reviews__card-review">
-                                <div class="reviews__review-person">
-                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
-                                    <div class="reviews__person-info">
-                                        <p class="reviews__person-name">
-                                            Hanna Ivanova
-                                        </p>
-                                        <p class="reviews__person-location">
-                                            🇺🇦 Ukraine
-                                        </p>
+                                </li>
+                            
+                                <li>
+                                    <div class="reviews__card">
+                                        <div class="reviews__card-pic">
+                                            <img src="./img/jpg/review-2.jpg" alt="King Kong Hostel" class="reviews__card-thumb">
+                                            <div class="reviews__card-stats">
+                                                <h3 class="reviews__card-price">From 40 USD</h3>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__card-resort">
+                                                <div class="reviews__wrapper-1">
+                                                    <p class="reviews__card-title">
+                                                        King Kong Hostel
+                                                    </p>
+                                                    <p class="reviews__card-location">
+                                                        Rotterdam, Netherlands
+                                                    </p>
+                                                </div>
+                                                <div class="reviews__wrapper-2">
+                                                    <div class="reviews__card-rating">
+                                                        8,9
+                                                    </div>
+                                                    <p class="reviews__card-amount">
+                                                        2016 reviews
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__card-review">
+                                                <div class="reviews__review-person">
+                                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
+                                                    <div class="reviews__person-info">
+                                                        <p class="reviews__person-name">
+                                                            Adam Smith
+                                                        </p>
+                                                        <p class="reviews__person-location">
+                                                            🇺🇸 USA
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="reviews__review-text">
+                                                    I've been in this hostel for a month and here is the best hostel of all <br>
+                                                    Excellent management of excellent and ethical staff and bedrooms Bathrooms are always clean and excellent <br>
+                                                    Most importantly, those who work here are kind and good-natured. 
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <p class="reviews__review-text">
-                                    Great location, really pleasant and clean rooms, but the thing that makes this such a
-                                    good place to stay are the staff. All of the people are incredibly helpful and generous
-                                    with their time and advice. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__card">
-                        <div class="reviews__card-pic">
-                            <img src="./img/jpg/review-2.jpg" alt="King Kong Hostel" class="reviews__card-thumb">
-                            <div class="reviews__card-stats">
-                                <h3 class="reviews__card-price">From 40 USD</h3>
-                            </div>
-                        </div>
-                        <div class="reviews__info">
-                            <div class="reviews__card-resort">
-                                <div class="reviews__wrapper-1">
-                                    <p class="reviews__card-title">
-                                        King Kong Hostel
-                                    </p>
-                                    <p class="reviews__card-location">
-                                        Rotterdam, Netherlands
-                                    </p>
-                                </div>
-                                <div class="reviews__wrapper-2">
-                                    <div class="reviews__card-rating">
-                                        8,9
+                                </li>
+
+                                <li>
+                                    <div class="reviews__card">
+                                        <div class="reviews__card-pic">
+                                            <img src="./img/jpg/review-3.jpg" alt="Rokoko Hotel" class="reviews__card-thumb">
+                                            <div class="reviews__card-stats">
+                                                <h3 class="reviews__card-price">From 100 USD</h3>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__card-resort">
+                                                <div class="reviews__wrapper-1">
+                                                    <p class="reviews__card-title">
+                                                        Rokoko Hotel
+                                                    </p>
+                                                    <p class="reviews__card-location">
+                                                        Ourika, Marocco
+                                                    </p>
+                                                </div>
+                                                <div class="reviews__wrapper-2">
+                                                    <div class="reviews__card-rating">
+                                                        9,1
+                                                    </div>
+                                                    <p class="reviews__card-amount">
+                                                        815 reviews
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__card-review">
+                                                <div class="reviews__review-person">
+                                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
+                                                    <div class="reviews__person-info">
+                                                        <p class="reviews__person-name">
+                                                            Anika Messer
+                                                        </p>
+                                                        <p class="reviews__person-location">
+                                                            🇩🇪 Germany
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="reviews__review-text">
+                                                    Efficient, friendly, professional, and appropriately attentive. Great hotel in a great
+                                                    location. Easy access to all the surrounding historical sites. Staff is fantastic. 
+                                                    Will definitely stay at this location during my next stay in Marocco. 
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="reviews__card-amount">
-                                        2016 reviews
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="reviews__card-review">
-                                <div class="reviews__review-person">
-                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
-                                    <div class="reviews__person-info">
-                                        <p class="reviews__person-name">
-                                            Adam Smith
-                                        </p>
-                                        <p class="reviews__person-location">
-                                            🇺🇸 USA
-                                        </p>
+                                </li>
+
+                                <li>
+                                    <div class="reviews__card">
+                                        <div class="reviews__card-pic">
+                                            <img src="./img/jpg/review-4.jpg" alt="Apartment Sunshine" class="reviews__card-thumb">
+                                            <div class="reviews__card-stats">
+                                                <h3 class="reviews__card-price">From 120 USD</h3>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__card-resort">
+                                                <div class="reviews__wrapper-1">
+                                                    <p class="reviews__card-title">
+                                                        Apartment Sunshine
+                                                    </p>
+                                                    <p class="reviews__card-location">
+                                                        Santa Cruz de Tenerife, Spain
+                                                    </p>
+                                                </div>
+                                                <div class="reviews__wrapper-2">
+                                                    <div class="reviews__card-rating">
+                                                        8,8
+                                                    </div>
+                                                    <p class="reviews__card-amount">
+                                                        978 reviews
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__card-review">
+                                                <div class="reviews__review-person">
+                                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
+                                                    <div class="reviews__person-info">
+                                                        <p class="reviews__person-name">
+                                                            David Smith
+                                                        </p>
+                                                        <p class="reviews__person-location">
+                                                            🇺🇸 USA
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="reviews__review-text">
+                                                    I've been in this hostel for a month and here is the best hostel of all <br>
+                                                    Most importantly, those who work here are kind and good-natured. 
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <p class="reviews__review-text">
-                                    I've been in this hostel for a month and here is the best hostel of all <br>
-                                    Excellent management of excellent and ethical staff and bedrooms Bathrooms are always clean and excellent <br>
-                                    Most importantly, those who work here are kind and good-natured. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reviews__card">
-                        <div class="reviews__card-pic">
-                            <img src="./img/jpg/review-3.jpg" alt="Rokoko Hotel" class="reviews__card-thumb">
-                            <div class="reviews__card-stats">
-                                <h3 class="reviews__card-price">From 100 USD</h3>
-                            </div>
-                        </div>
-                        <div class="reviews__info">
-                            <div class="reviews__card-resort">
-                                <div class="reviews__wrapper-1">
-                                    <p class="reviews__card-title">
-                                        Rokoko Hotel
-                                    </p>
-                                    <p class="reviews__card-location">
-                                        Ourika, Marocco
-                                    </p>
-                                </div>
-                                <div class="reviews__wrapper-2">
-                                    <div class="reviews__card-rating">
-                                        9,1
+                                </li>
+                                <li>
+                                    <div class="reviews__card">
+                                        <div class="reviews__card-pic">
+                                            <img src="./img/jpg/review-5.jpg" alt="Hostel Friendship" class="reviews__card-thumb">
+                                            <div class="reviews__card-stats">
+                                                <h3 class="reviews__card-price">From 50 USD</h3>
+                                            </div>
+                                        </div>
+                                        <div class="reviews__info">
+                                            <div class="reviews__card-resort">
+                                                <div class="reviews__wrapper-1">
+                                                    <p class="reviews__card-title">
+                                                        Hostel Friendship
+                                                    </p>
+                                                    <p class="reviews__card-location">
+                                                        Berlin, Germany
+                                                    </p>
+                                                </div>
+                                                <div class="reviews__wrapper-2">
+                                                    <div class="reviews__card-rating">
+                                                        8,7
+                                                    </div>
+                                                    <p class="reviews__card-amount">
+                                                        1763 reviews
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="reviews__card-review">
+                                                <div class="reviews__review-person">
+                                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
+                                                    <div class="reviews__person-info">
+                                                        <p class="reviews__person-name">
+                                                            Mell Hart
+                                                        </p>
+                                                        <p class="reviews__person-location">
+                                                            🇺🇸 USA
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="reviews__review-text">
+                                                    Efficient, friendly, professional, and appropriately attentive. Great hotel in a great
+                                                    location. Staff is fantastic. 
+                                                    Will definitely stay at this location during my next stay in Marocco. 
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="reviews__card-amount">
-                                        815 reviews
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="reviews__card-review">
-                                <div class="reviews__review-person">
-                                    <img src="./img/svg/person.svg" alt="Person" class="reviews__person-pic">
-                                    <div class="reviews__person-info">
-                                        <p class="reviews__person-name">
-                                            Anika Messer
-                                        </p>
-                                        <p class="reviews__person-location">
-                                            🇩🇪 Germany
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="reviews__review-text">
-                                    Efficient, friendly, professional, and appropriately attentive. Great hotel in a great
-                                    location. Easy access to all the surrounding historical sites. Staff is fantastic. 
-                                    Will definitely stay at this location during my next stay in Marocco. 
-                                </p>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
+                        <button id="nextR" class="arrow next"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -434,17 +855,16 @@
         <!-- Reviews end -->
 
         <!-- Sign up 2 start -->
-        <div class="sign-up-2">
+        <div id="sign-up-2nd" class="sign-up-2">
             <div class="wrapper">
                 <div class="sign-up__container-2">
-                    <img src="./img/svg/close.svg" alt="Close" class="sign-up__close-2">
+                    <img id="closeSU2nd" src="./img/svg/close.svg" alt="Close" class="sign-up__close-2">
                     <img src="./img/svg/logo-small.svg" alt="Small logo" class="sign-up__pic-2">
                     <p class="caption sign-up__text-2">
                         Sign up in the app and get 20% off your first booking
                     </p>
                     <button type="submit" class="sign-up__button-2">Install</button>
                 </div>
-                
             </div>
         </div>
         <!-- Sign up 2 end -->
@@ -525,5 +945,13 @@
             </p>
         </div>
     </footer>
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/date-range-picker.js"></script>
+    <script src="./js/search-form.js"></script>
+    <script src="./js/sign-in-form.js"></script>
+    <script src="./js/carousels.js"></script>
+    <script src="./js/tabs.js"></script>
+    <script src="./js/sign-up.js"></script>
 </body>
 </html>
