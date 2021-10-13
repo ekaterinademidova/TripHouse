@@ -18,3 +18,51 @@ auth.addEventListener('click', function() {
     line.style.display = 'none';
     light.style.fill = 'var(--accent-yellow)';
 });
+
+let statusNL = false;
+
+const burger = document.querySelector('.burger');
+const textList = document.querySelector('.text-list');
+const nestedList = textList.querySelector('.header__list');
+
+burger.addEventListener('click', () => {
+    nestedList.classList.add('nested-list');
+    nestedList.style.display = 'block';
+    statusNL = true;
+});
+
+document.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (statusNL) {
+        const el = event.target;
+
+        const parent = nestedList;
+        let current = el;
+        let isChild = false;
+
+        while(current = current.parentNode)
+        {
+            if(current == parent) {
+                isChild = true;
+            }
+        }
+        if (el != nestedList && (!isChild || (isChild && el.tagName == 'A')) && el != burger) {
+            nestedList.classList.remove('nested-list');
+            nestedList.style.display = 'none';
+            statusNL = false;
+        }
+    }
+});
+
+window.onresize = function() {
+    if (window.innerWidth > 768) {
+        nestedList.classList.remove('nested-list');
+        nestedList.style.display = 'flex';
+        burger.style.display = 'none';
+    } else {
+        nestedList.classList.add('nested-list');
+        nestedList.style.display = 'none';
+        burger.style.display = 'block';
+    }
+    statusNL = false;
+};

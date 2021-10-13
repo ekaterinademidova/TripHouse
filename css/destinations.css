@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
-    width: 644px;
+    max-width: 644px;
     margin-bottom: 64px;
     background: var(--stroke-color);
     border-radius: 5px;
@@ -11,6 +11,8 @@
 .destinations__item {
     padding: 17px 52px;
     text-align: center;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 .destinations__item:first-child {
